@@ -3,13 +3,11 @@ export default function ehUmCPF(campo) {
     const cpf = campo.value.replace(/\.|-/g, "");
 
     if(validaNumerosRepetidos(cpf)|| validaPrimeiroDigito(cpf)|| validaSegundoDigito(cpf))
-    {
-        console.log("Esse cpf não existe");
-    }else{
-    console.log("Existe!!");
+{
+    campo.setCustomValidity('Esse cpf não é válido');
 }
 }
-
+    
 function validaNumerosRepetidos(cpf) {
     const numerosRepetidos = [
     '00000000000',
